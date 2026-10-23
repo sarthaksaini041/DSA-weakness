@@ -1,0 +1,2 @@
+# Needed only for aggregate audit plots. Collection/features use the standard library.
+matplotlib==3.10.8
