@@ -53,9 +53,10 @@ identity, target, split assignment, and training weights are metadata, not model
 profile rating, maximum rating, current rank, runtime, memory usage, and passed tests are not
 inputs.
 
-No imputation, scaling, tag vocabulary fitting, feature selection, or tuning has occurred. Those
-operations must be learned on training data only and reused unchanged on validation/test sets.
-Cold-start rates remain missing rather than being filled using future outcomes.
+Feature generation preserves missing values. `code/train_models.py` fits median imputation, missing
+indicators, scaling, and the tag vocabulary on training data only, then reuses them unchanged for
+validation. Cold-start rates are never filled using future outcomes. Frozen final-test results are
+available in [the final report](test_results.md).
 
 ## Historical availability and limitations
 
@@ -95,9 +96,9 @@ not scored data.
 | validation          |  4,875 |    46 |
 
 The unseen-user test has 1,182 rows from 17 users and both outcomes. All six collection-time rating
-groups are represented. Coverage permits model development; prediction quality and subgroup
-uncertainty remain unevaluated. No currently unrated users have training-period rows, so
-never-rated-user performance needs separate assessment.
+groups are represented. Coverage permitted model development; prediction quality and subgroup
+uncertainty are now reported in [the final evaluation](test_results.md). No currently unrated users
+have training-period rows, so never-rated-user performance needs separate assessment.
 
 Source hashes and cutoffs are saved. Changed raw inputs or outcome lag require a new output folder;
 do not alter splits after inspecting model results.

@@ -6,8 +6,10 @@
 - Student name(s) and roll number(s): **To be filled by the team**
 - Platform: Codeforces
 - Status: API access, the 12-user pilot, and the 120-user cohort are collected and audited.
-  Full-cohort features and evaluation splits are frozen; model fitting and evaluation remain
-  pending.
+  Full-cohort features and evaluation splits are frozen; baseline and three-model validation
+  comparisons and frozen final testing are complete; see `reports/test_results.md`. Offline
+  recommendations and the static website are implemented and locally tested. GitHub Pages
+  publication and live handle support remain pending.
 
 Track completion using [the rubric evidence checklist](reports/checklist.md).
 
@@ -114,7 +116,8 @@ weaknesses from raw acceptance rates alone.
 
 Recommend problems with no previous accepted submission, label previously attempted problems as
 retries, and prioritize new problems for first-attempt predictions. Filter by weak-topic relevance
-and achievable difficulty; start with a validation-selected success-probability range. Explain each
+and achievable difficulty; the offline prototype ranks supported-topic candidates by estimated
+acceptance within a chosen difficulty range, with no tuned probability cutoff. Explain each
 recommendation using its tags, difficulty, and relevant history. Avoid treating unseen topics as
 demonstrated weaknesses.
 

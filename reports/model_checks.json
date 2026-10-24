@@ -1,0 +1,2125 @@
+{
+  "model": "Random Forest depth=16",
+  "test_sets_scored": false,
+  "seed": 42,
+  "training_metadata": {
+    "selection_metric": "user_average.log_loss",
+    "threshold": 0.5,
+    "seed": 42,
+    "test_sets_scored": false,
+    "selected": "Random Forest depth=16",
+    "validation_rows": 4875,
+    "validation_users": 46,
+    "training_rows": 22752,
+    "training_users": 61,
+    "versions": {
+      "python": "3.12.14",
+      "sklearn": "1.8.0",
+      "numpy": "2.3.5",
+      "joblib": "1.5.3"
+    },
+    "sha256": {
+      "features.json": "4eff63227c6058e4c22da9ca274bea4bdb52e9439db3ebf9bac7be8368ca4bb3",
+      "schema.json": "7c42bc4d2667bab28d24e07d0acdf002b6f738ff68faef03d686ad896a3643d7",
+      "splits.json": "9ec7f4b0af9e6e996e4392362e80d31e4017dcc9793055d765d1fccc1210ecec",
+      "manifest.json": "2a1fcf65e9d28bdb32ddb5b60f6adcccc7ba0e589a74cef660613b3a997e3430",
+      "coverage_gates.json": "3380d4c4cdbf4821637460929b324f27afbd2dd80fa441ed78a76d99324db79d"
+    },
+    "code_sha256": "2b72a2597115964cca2ca7f06f14aafa803fd7f46a713e64064298729961b709",
+    "numeric_features": [
+      "prior_problems_attempted",
+      "prior_problems_solved",
+      "prior_first_attempts_judged",
+      "prior_first_acceptance_rate",
+      "recent_20_acceptance_rate",
+      "recent_20_count",
+      "topic_prior_attempts_mean",
+      "topic_prior_judged_mean",
+      "topic_acceptance_rate_mean",
+      "historical_rating",
+      "historical_rating_missing",
+      "problem_rating",
+      "problem_rating_missing",
+      "rating_gap",
+      "days_since_previous_attempt",
+      "attempts_previous_30_days",
+      "tag_count"
+    ],
+    "tag_vocabulary": [
+      "2-sat",
+      "binary search",
+      "bitmasks",
+      "brute force",
+      "chinese remainder theorem",
+      "combinatorics",
+      "constructive algorithms",
+      "data structures",
+      "dfs and similar",
+      "divide and conquer",
+      "dp",
+      "dsu",
+      "expression parsing",
+      "fft",
+      "flows",
+      "games",
+      "geometry",
+      "graph matchings",
+      "graphs",
+      "greedy",
+      "hashing",
+      "implementation",
+      "interactive",
+      "math",
+      "matrices",
+      "meet-in-the-middle",
+      "number theory",
+      "probabilities",
+      "schedules",
+      "shortest paths",
+      "sortings",
+      "string suffix structures",
+      "strings",
+      "ternary search",
+      "trees",
+      "two pointers"
+    ],
+    "results": [
+      {
+        "name": "Acceptance-rate baseline",
+        "parameters": {
+          "probability": 0.5597574566751012
+        },
+        "submission": {
+          "log_loss": 0.6668142327281162,
+          "brier": 0.2368878975185714,
+          "roc_auc": 0.5,
+          "accuracy": 0.6395897435897436,
+          "precision": 0.6395897435897436,
+          "recall": 1.0,
+          "f1": 0.7801826598273489
+        },
+        "user_average": {
+          "log_loss": 0.6697327683321225,
+          "brier": 0.23834019068556972,
+          "roc_auc": 0.5,
+          "accuracy": 0.627438179184197,
+          "precision": 0.627438179184197,
+          "recall": 1.0,
+          "f1": 0.7608592354294809
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Logistic Regression C=0.1",
+        "parameters": {
+          "C": 0.1,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 3000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.6143730635705511,
+          "brier": 0.21193614551332757,
+          "roc_auc": 0.6749512533573212,
+          "accuracy": 0.6736410256410257,
+          "precision": 0.7003411178168459,
+          "recall": 0.8559974342527261,
+          "f1": 0.7703853369894645
+        },
+        "user_average": {
+          "log_loss": 0.6428496555641083,
+          "brier": 0.224932378270546,
+          "roc_auc": 0.6242893343963314,
+          "accuracy": 0.6358597784059826,
+          "precision": 0.6624285069399509,
+          "recall": 0.746042050500283,
+          "f1": 0.6865653538096234
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Logistic Regression C=1.0",
+        "parameters": {
+          "C": 1.0,
+          "class_weight": null,
+          "dual": false,
+          "fit_intercept": true,
+          "intercept_scaling": 1,
+          "l1_ratio": 0.0,
+          "max_iter": 3000,
+          "n_jobs": null,
+          "penalty": "deprecated",
+          "random_state": 42,
+          "solver": "lbfgs",
+          "tol": 0.0001,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.6198813298797843,
+          "brier": 0.2130576489122799,
+          "roc_auc": 0.672525694892929,
+          "accuracy": 0.6734358974358975,
+          "precision": 0.7014255543822597,
+          "recall": 0.8521488133418859,
+          "f1": 0.769475818129163
+        },
+        "user_average": {
+          "log_loss": 0.6480871650272455,
+          "brier": 0.22639643352949682,
+          "roc_auc": 0.623874188656844,
+          "accuracy": 0.6365340593284966,
+          "precision": 0.6634414189562293,
+          "recall": 0.7439820305102024,
+          "f1": 0.6860897891500994
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Random Forest depth=8",
+        "parameters": {
+          "bootstrap": true,
+          "ccp_alpha": 0.0,
+          "class_weight": null,
+          "criterion": "gini",
+          "max_depth": 8,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 10,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 200,
+          "n_jobs": 2,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.6052211976048489,
+          "brier": 0.20864613954694614,
+          "roc_auc": 0.6955613813416726,
+          "accuracy": 0.6705641025641026,
+          "precision": 0.6853849926434527,
+          "recall": 0.896407953816549,
+          "f1": 0.7768204558087827
+        },
+        "user_average": {
+          "log_loss": 0.6137089264959825,
+          "brier": 0.21270123179681996,
+          "roc_auc": 0.6611670789920702,
+          "accuracy": 0.6584368265952427,
+          "precision": 0.6783866094462787,
+          "recall": 0.8089741710545253,
+          "f1": 0.7206777697271324
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Random Forest depth=16",
+        "parameters": {
+          "bootstrap": true,
+          "ccp_alpha": 0.0,
+          "class_weight": null,
+          "criterion": "gini",
+          "max_depth": 16,
+          "max_features": "sqrt",
+          "max_leaf_nodes": null,
+          "max_samples": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 10,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "monotonic_cst": null,
+          "n_estimators": 200,
+          "n_jobs": 2,
+          "oob_score": false,
+          "random_state": 42,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.5992819811571469,
+          "brier": 0.20620244285550401,
+          "roc_auc": 0.6978013904247392,
+          "accuracy": 0.6795897435897436,
+          "precision": 0.7013457556935818,
+          "recall": 0.8691468890314304,
+          "f1": 0.7762818676596963
+        },
+        "user_average": {
+          "log_loss": 0.607351941512968,
+          "brier": 0.21017004582172633,
+          "roc_auc": 0.6657699840927674,
+          "accuracy": 0.6639895176344759,
+          "precision": 0.6917408774806496,
+          "recall": 0.7703735475671032,
+          "f1": 0.7093855382435126
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Gradient Boosting depth=2",
+        "parameters": {
+          "ccp_alpha": 0.0,
+          "criterion": "friedman_mse",
+          "init": null,
+          "learning_rate": 0.05,
+          "loss": "log_loss",
+          "max_depth": 2,
+          "max_features": null,
+          "max_leaf_nodes": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 20,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "n_estimators": 100,
+          "n_iter_no_change": null,
+          "random_state": 42,
+          "subsample": 1.0,
+          "tol": 0.0001,
+          "validation_fraction": 0.1,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.607188501423661,
+          "brier": 0.2097078565213169,
+          "roc_auc": 0.682151810607839,
+          "accuracy": 0.6605128205128206,
+          "precision": 0.7019044990339498,
+          "recall": 0.8155869146889031,
+          "f1": 0.7544874647678386
+        },
+        "user_average": {
+          "log_loss": 0.6126830067001585,
+          "brier": 0.2121721037769557,
+          "roc_auc": 0.6574641365253376,
+          "accuracy": 0.6523960136257134,
+          "precision": 0.6889556866034009,
+          "recall": 0.7391704860810214,
+          "f1": 0.6927573440444916
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      },
+      {
+        "name": "Gradient Boosting depth=3",
+        "parameters": {
+          "ccp_alpha": 0.0,
+          "criterion": "friedman_mse",
+          "init": null,
+          "learning_rate": 0.05,
+          "loss": "log_loss",
+          "max_depth": 3,
+          "max_features": null,
+          "max_leaf_nodes": null,
+          "min_impurity_decrease": 0.0,
+          "min_samples_leaf": 20,
+          "min_samples_split": 2,
+          "min_weight_fraction_leaf": 0.0,
+          "n_estimators": 100,
+          "n_iter_no_change": null,
+          "random_state": 42,
+          "subsample": 1.0,
+          "tol": 0.0001,
+          "validation_fraction": 0.1,
+          "verbose": 0,
+          "warm_start": false
+        },
+        "submission": {
+          "log_loss": 0.6072036301650626,
+          "brier": 0.20935904572659114,
+          "roc_auc": 0.684734533870383,
+          "accuracy": 0.6715897435897435,
+          "precision": 0.7019973368841544,
+          "recall": 0.8454137267479154,
+          "f1": 0.7670595082205732
+        },
+        "user_average": {
+          "log_loss": 0.6182639478977785,
+          "brier": 0.21423341732090578,
+          "roc_auc": 0.656867558438016,
+          "accuracy": 0.6524965033834528,
+          "precision": 0.6928820804509807,
+          "recall": 0.7531465455805811,
+          "f1": 0.7023836368695722
+        },
+        "rows": 4875,
+        "users": 46,
+        "users_with_auc": 46
+      }
+    ]
+  },
+  "analysis_code_sha256": "ecf9fa38f480d273c767a061ccf5b2f7912dce569b21abcdfd9dd606838e89de",
+  "feature_code_sha256": "be77fd3a78bab66a529f8fa6df863af7c50093b8e013a14a14750c82bb568738",
+  "artifact_sha256": "960ef5c7a7d4b08b5c7177e27b8ab3150ab4717e5b6567fcb2eec845d1226dd7",
+  "sensitivity": [
+    {
+      "name": "Original: one-day lag",
+      "submission": {
+        "log_loss": 0.5992819811571469,
+        "brier": 0.20620244285550401,
+        "roc_auc": 0.6978013904247392,
+        "accuracy": 0.6795897435897436,
+        "precision": 0.7013457556935818,
+        "recall": 0.8691468890314304,
+        "f1": 0.7762818676596963
+      },
+      "user_average": {
+        "log_loss": 0.607351941512968,
+        "brier": 0.21017004582172633,
+        "roc_auc": 0.6657699840927674,
+        "accuracy": 0.6639895176344759,
+        "precision": 0.6917408774806496,
+        "recall": 0.7703735475671032,
+        "f1": 0.7093855382435126
+      },
+      "rows": 4875,
+      "users": 46,
+      "users_with_auc": 46
+    },
+    {
+      "name": "Without difficulty",
+      "submission": {
+        "log_loss": 0.6166712736046789,
+        "brier": 0.21355488449079368,
+        "roc_auc": 0.6708209770648917,
+        "accuracy": 0.662974358974359,
+        "precision": 0.6793967404524447,
+        "recall": 0.8957665169980756,
+        "f1": 0.7727209849218426
+      },
+      "user_average": {
+        "log_loss": 0.631583650346734,
+        "brier": 0.22079713663073477,
+        "roc_auc": 0.6132267348274465,
+        "accuracy": 0.6392705431014216,
+        "precision": 0.6587287153238579,
+        "recall": 0.790885638171664,
+        "f1": 0.7034638740032615
+      },
+      "rows": 4875,
+      "users": 46,
+      "users_with_auc": 46
+    },
+    {
+      "name": "Seven-day outcome lag",
+      "submission": {
+        "log_loss": 0.601216137378778,
+        "brier": 0.2072513178317598,
+        "roc_auc": 0.6942001078431623,
+        "accuracy": 0.6758974358974359,
+        "precision": 0.7006784968684759,
+        "recall": 0.8611289288005132,
+        "f1": 0.7726618705035971
+      },
+      "user_average": {
+        "log_loss": 0.6106800340741053,
+        "brier": 0.21169375321482728,
+        "roc_auc": 0.6639747006035557,
+        "accuracy": 0.6654107058953237,
+        "precision": 0.6963211953379675,
+        "recall": 0.7741776628005749,
+        "f1": 0.7141142314248101
+      },
+      "rows": 4875,
+      "users": 46,
+      "users_with_auc": 46
+    }
+  ],
+  "uncertainty": {
+    "users": 46,
+    "resamples": 2000,
+    "log_loss_95_percent": [
+      0.5845060828935007,
+      0.6290304409790426
+    ],
+    "paired_difference_95_percent": [
+      -0.08335095246864406,
+      -0.04244642758725351
+    ],
+    "paired_difference": -0.06238082681915441
+  },
+  "calibration": [
+    {
+      "lower": 0.1,
+      "upper": 0.2,
+      "rows": 2,
+      "predicted": 0.17289031052485695,
+      "observed": 0.0
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.3,
+      "rows": 40,
+      "predicted": 0.2773213373963085,
+      "observed": 0.325
+    },
+    {
+      "lower": 0.3,
+      "upper": 0.4,
+      "rows": 294,
+      "predicted": 0.35670561582474114,
+      "observed": 0.3163265306122449
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "rows": 675,
+      "predicted": 0.4551996469399465,
+      "observed": 0.4474074074074074
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6,
+      "rows": 1178,
+      "predicted": 0.5538643759115914,
+      "observed": 0.566213921901528
+    },
+    {
+      "lower": 0.6,
+      "upper": 0.7,
+      "rows": 1253,
+      "predicted": 0.6432742299190933,
+      "observed": 0.7015163607342378
+    },
+    {
+      "lower": 0.7,
+      "upper": 0.8,
+      "rows": 879,
+      "predicted": 0.7481420540014422,
+      "observed": 0.7758816837315131
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "rows": 524,
+      "predicted": 0.8358520836125882,
+      "observed": 0.8721374045801527
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "rows": 30,
+      "predicted": 0.9086732761023624,
+      "observed": 0.8333333333333334
+    }
+  ],
+  "groups": [
+    {
+      "kind": "Collection-time rating",
+      "label": "1200\u20131399",
+      "submission": {
+        "log_loss": 0.6147103617663305,
+        "brier": 0.21321791286965008,
+        "roc_auc": 0.7058987588899734,
+        "accuracy": 0.647119341563786,
+        "precision": 0.6782884310618067,
+        "recall": 0.7535211267605634,
+        "f1": 0.7139282735613011
+      },
+      "user_average": {
+        "log_loss": 0.6215078792560833,
+        "brier": 0.21628505048878544,
+        "roc_auc": 0.6732033057113426,
+        "accuracy": 0.6460908805652305,
+        "precision": 0.6453909947248746,
+        "recall": 0.7209126643698078,
+        "f1": 0.6626594204631467
+      },
+      "rows": 972,
+      "users": 12,
+      "users_with_auc": 12,
+      "baseline_user_log_loss": 0.6816546386077668,
+      "sparse": false
+    },
+    {
+      "kind": "Collection-time rating",
+      "label": "1400\u20131599",
+      "submission": {
+        "log_loss": 0.6086674339219128,
+        "brier": 0.21016107496948822,
+        "roc_auc": 0.6389849342034757,
+        "accuracy": 0.6943820224719102,
+        "precision": 0.7034659820282413,
+        "recall": 0.9303904923599321,
+        "f1": 0.8011695906432749
+      },
+      "user_average": {
+        "log_loss": 0.6096673194484779,
+        "brier": 0.2113581609168899,
+        "roc_auc": 0.6496660647119206,
+        "accuracy": 0.6681669923558944,
+        "precision": 0.7079535525881318,
+        "recall": 0.7779598499930926,
+        "f1": 0.7258906147316153
+      },
+      "rows": 890,
+      "users": 8,
+      "users_with_auc": 8,
+      "baseline_user_log_loss": 0.6637617231895359,
+      "sparse": true
+    },
+    {
+      "kind": "Collection-time rating",
+      "label": "1600\u20131899",
+      "submission": {
+        "log_loss": 0.607062385383946,
+        "brier": 0.2097706775575274,
+        "roc_auc": 0.6954688658265382,
+        "accuracy": 0.6679151061173533,
+        "precision": 0.6853932584269663,
+        "recall": 0.8591549295774648,
+        "f1": 0.7625
+      },
+      "user_average": {
+        "log_loss": 0.5980438788155255,
+        "brier": 0.2060466697418303,
+        "roc_auc": 0.6896014910551251,
+        "accuracy": 0.6628152374607015,
+        "precision": 0.6882062327678401,
+        "recall": 0.8318521496725158,
+        "f1": 0.7522622345180866
+      },
+      "rows": 801,
+      "users": 6,
+      "users_with_auc": 6,
+      "baseline_user_log_loss": 0.6685292161419875,
+      "sparse": true
+    },
+    {
+      "kind": "Collection-time rating",
+      "label": "1900+",
+      "submission": {
+        "log_loss": 0.5586292263093803,
+        "brier": 0.1878621765315167,
+        "roc_auc": 0.7158600562377541,
+        "accuracy": 0.7263025737602009,
+        "precision": 0.7397163120567376,
+        "recall": 0.9379496402877698,
+        "f1": 0.8271213322759714
+      },
+      "user_average": {
+        "log_loss": 0.5570795552808862,
+        "brier": 0.18811889048562438,
+        "roc_auc": 0.7187698572488322,
+        "accuracy": 0.7214437374630119,
+        "precision": 0.7623907303870755,
+        "recall": 0.8881523932641844,
+        "f1": 0.8102147727303168
+      },
+      "rows": 1593,
+      "users": 11,
+      "users_with_auc": 11,
+      "baseline_user_log_loss": 0.650291746226194,
+      "sparse": false
+    },
+    {
+      "kind": "Collection-time rating",
+      "label": "Below 1200",
+      "submission": {
+        "log_loss": 0.6555650143109466,
+        "brier": 0.23180121175960464,
+        "roc_auc": 0.6383934469546836,
+        "accuracy": 0.6075533661740559,
+        "precision": 0.6306954436450839,
+        "recall": 0.7557471264367817,
+        "f1": 0.6875816993464052
+      },
+      "user_average": {
+        "log_loss": 0.6496428728070235,
+        "brier": 0.2283930127438405,
+        "roc_auc": 0.6006967132459899,
+        "accuracy": 0.6415398460873288,
+        "precision": 0.7057780719801825,
+        "recall": 0.6939703989703989,
+        "f1": 0.6495951110811112
+      },
+      "rows": 609,
+      "users": 8,
+      "users_with_auc": 8,
+      "baseline_user_log_loss": 0.67862687834973,
+      "sparse": true
+    },
+    {
+      "kind": "Collection-time rating",
+      "label": "Unrated",
+      "submission": {
+        "log_loss": 0.6894748394966213,
+        "brier": 0.2488042988552918,
+        "roc_auc": 0.5,
+        "accuracy": 0.4,
+        "precision": 0.25,
+        "recall": 0.25,
+        "f1": 0.25
+      },
+      "user_average": {
+        "log_loss": 0.6894748394966213,
+        "brier": 0.2488042988552918,
+        "roc_auc": 0.5,
+        "accuracy": 0.4,
+        "precision": 0.25,
+        "recall": 0.25,
+        "f1": 0.25
+      },
+      "rows": 10,
+      "users": 1,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.724358362330246,
+      "sparse": true
+    },
+    {
+      "kind": "Difficulty",
+      "label": "1200\u20131599",
+      "submission": {
+        "log_loss": 0.630944650072763,
+        "brier": 0.21980165648076744,
+        "roc_auc": 0.6710951101195004,
+        "accuracy": 0.6661197703035275,
+        "precision": 0.6878547105561862,
+        "recall": 0.8211382113821138,
+        "f1": 0.7486102532427424
+      },
+      "user_average": {
+        "log_loss": 0.6212457121121474,
+        "brier": 0.2152765944443552,
+        "roc_auc": 0.5256469926151978,
+        "accuracy": 0.6781010500184649,
+        "precision": 0.48325537472486885,
+        "recall": 0.5891514036610144,
+        "f1": 0.5062619085374227
+      },
+      "rows": 1219,
+      "users": 43,
+      "users_with_auc": 36,
+      "baseline_user_log_loss": 0.6962108832821063,
+      "sparse": false
+    },
+    {
+      "kind": "Difficulty",
+      "label": "1600+",
+      "submission": {
+        "log_loss": 0.6518899671983258,
+        "brier": 0.23000187492304738,
+        "roc_auc": 0.671043771043771,
+        "accuracy": 0.6210739614994935,
+        "precision": 0.6010016694490818,
+        "recall": 0.7272727272727273,
+        "f1": 0.6581352833638026
+      },
+      "user_average": {
+        "log_loss": 0.6288850395564001,
+        "brier": 0.21906928958466754,
+        "roc_auc": 0.5797605357997755,
+        "accuracy": 0.6684129690995979,
+        "precision": 0.3940734841356619,
+        "recall": 0.39860375792976965,
+        "f1": 0.35284303478828816
+      },
+      "rows": 987,
+      "users": 34,
+      "users_with_auc": 26,
+      "baseline_user_log_loss": 0.7254565773239907,
+      "sparse": false
+    },
+    {
+      "kind": "Difficulty",
+      "label": "Below 1200",
+      "submission": {
+        "log_loss": 0.5580878667763322,
+        "brier": 0.18806880338561446,
+        "roc_auc": 0.692514778964039,
+        "accuracy": 0.711772098868873,
+        "precision": 0.7386363636363636,
+        "recall": 0.9198113207547169,
+        "f1": 0.819327731092437
+      },
+      "user_average": {
+        "log_loss": 0.5318811186947121,
+        "brier": 0.17703382493511208,
+        "roc_auc": 0.6182751284610503,
+        "accuracy": 0.7311420633759292,
+        "precision": 0.7546800343130993,
+        "recall": 0.8568418326138064,
+        "f1": 0.788571200994524
+      },
+      "rows": 2387,
+      "users": 46,
+      "users_with_auc": 42,
+      "baseline_user_log_loss": 0.6389126398993134,
+      "sparse": false
+    },
+    {
+      "kind": "Difficulty",
+      "label": "Not rated",
+      "submission": {
+        "log_loss": 0.6269751563210688,
+        "brier": 0.21761207602842936,
+        "roc_auc": 0.6240826079535756,
+        "accuracy": 0.6702127659574468,
+        "precision": 0.6764705882352942,
+        "recall": 0.9735449735449735,
+        "f1": 0.7982646420824295
+      },
+      "user_average": {
+        "log_loss": 0.6787519819379134,
+        "brier": 0.24307521489041112,
+        "roc_auc": 0.6207791167166167,
+        "accuracy": 0.4988432961837217,
+        "precision": 0.5207591458569243,
+        "recall": 0.7005208333333333,
+        "f1": 0.5627185348253897
+      },
+      "rows": 282,
+      "users": 16,
+      "users_with_auc": 10,
+      "baseline_user_log_loss": 0.6778515493472743,
+      "sparse": false
+    },
+    {
+      "kind": "Historical rating",
+      "label": "No prior rating",
+      "submission": {
+        "log_loss": 0.6985465125087985,
+        "brier": 0.2516410386105143,
+        "roc_auc": 0.5736082474226805,
+        "accuracy": 0.5888324873096447,
+        "precision": 0.5888888888888889,
+        "recall": 0.5463917525773195,
+        "f1": 0.5668449197860963
+      },
+      "user_average": {
+        "log_loss": 0.7236675156491237,
+        "brier": 0.26341909019420495,
+        "roc_auc": 0.4344912998937767,
+        "accuracy": 0.5493083105928038,
+        "precision": 0.5062447786131996,
+        "recall": 0.38263607737291944,
+        "f1": 0.4044565160908651
+      },
+      "rows": 197,
+      "users": 19,
+      "users_with_auc": 19,
+      "baseline_user_log_loss": 0.698993925982408,
+      "sparse": false
+    },
+    {
+      "kind": "Historical rating",
+      "label": "Prior rating available",
+      "submission": {
+        "log_loss": 0.5951017518548222,
+        "brier": 0.20428893208942087,
+        "roc_auc": 0.6998399056134317,
+        "accuracy": 0.6834117144078666,
+        "precision": 0.7040275569687334,
+        "recall": 0.8795100959947038,
+        "f1": 0.7820456217807211
+      },
+      "user_average": {
+        "log_loss": 0.591352364767128,
+        "brier": 0.20272897298211862,
+        "roc_auc": 0.6953528182471023,
+        "accuracy": 0.6828973832548759,
+        "precision": 0.7027475404655921,
+        "recall": 0.8120579534488533,
+        "f1": 0.7364032757071675
+      },
+      "rows": 4678,
+      "users": 43,
+      "users_with_auc": 43,
+      "baseline_user_log_loss": 0.667644737242568,
+      "sparse": false
+    },
+    {
+      "kind": "Outcome history",
+      "label": "Judged history available",
+      "submission": {
+        "log_loss": 0.5981353744204483,
+        "brier": 0.20568243009240403,
+        "roc_auc": 0.6988903704384877,
+        "accuracy": 0.6810309278350516,
+        "precision": 0.7024922118380063,
+        "recall": 0.8709365947859672,
+        "f1": 0.7776979451070556
+      },
+      "user_average": {
+        "log_loss": 0.6038791073521481,
+        "brier": 0.20863123633520095,
+        "roc_auc": 0.679473821560493,
+        "accuracy": 0.6691819739342274,
+        "precision": 0.6987025529505252,
+        "recall": 0.7778741949748778,
+        "f1": 0.7172330570758945
+      },
+      "rows": 4850,
+      "users": 46,
+      "users_with_auc": 45,
+      "baseline_user_log_loss": 0.6678512626630948,
+      "sparse": false
+    },
+    {
+      "kind": "Outcome history",
+      "label": "No judged history",
+      "submission": {
+        "log_loss": 0.8217236880767032,
+        "brier": 0.3070849188969018,
+        "roc_auc": 0.42857142857142855,
+        "accuracy": 0.4,
+        "precision": 0.3333333333333333,
+        "recall": 0.36363636363636365,
+        "f1": 0.34782608695652173
+      },
+      "user_average": {
+        "log_loss": 0.8750874177140896,
+        "brier": 0.33030878781687417,
+        "roc_auc": 0.6666666666666667,
+        "accuracy": 0.39444444444444443,
+        "precision": 0.23333333333333334,
+        "recall": 0.23333333333333334,
+        "f1": 0.2222222222222222
+      },
+      "rows": 25,
+      "users": 15,
+      "users_with_auc": 5,
+      "baseline_user_log_loss": 0.7016749065617124,
+      "sparse": true
+    },
+    {
+      "kind": "Prior attempts",
+      "label": "0\u201319",
+      "submission": {
+        "log_loss": 0.6597528534609693,
+        "brier": 0.23393620403551452,
+        "roc_auc": 0.6391789379741186,
+        "accuracy": 0.6212624584717608,
+        "precision": 0.6645569620253164,
+        "recall": 0.6325301204819277,
+        "f1": 0.6481481481481481
+      },
+      "user_average": {
+        "log_loss": 0.6675258019565545,
+        "brier": 0.23758128801223347,
+        "roc_auc": 0.5448354885854886,
+        "accuracy": 0.6107659411451981,
+        "precision": 0.6194567641871562,
+        "recall": 0.5461479878146546,
+        "f1": 0.5556436628666642
+      },
+      "rows": 301,
+      "users": 18,
+      "users_with_auc": 18,
+      "baseline_user_log_loss": 0.6875854423069475,
+      "sparse": false
+    },
+    {
+      "kind": "Prior attempts",
+      "label": "100\u2013499",
+      "submission": {
+        "log_loss": 0.5893374753774013,
+        "brier": 0.20123581089531517,
+        "roc_auc": 0.6726135815482464,
+        "accuracy": 0.7037724180581324,
+        "precision": 0.7338235294117647,
+        "recall": 0.895067264573991,
+        "f1": 0.8064646464646464
+      },
+      "user_average": {
+        "log_loss": 0.5988787950481731,
+        "brier": 0.20618903361204471,
+        "roc_auc": 0.6764110263277128,
+        "accuracy": 0.6399442649999618,
+        "precision": 0.6744191534076871,
+        "recall": 0.8021911008222119,
+        "f1": 0.7219766399411981
+      },
+      "rows": 1617,
+      "users": 19,
+      "users_with_auc": 18,
+      "baseline_user_log_loss": 0.6706231136430625,
+      "sparse": false
+    },
+    {
+      "kind": "Prior attempts",
+      "label": "20\u201399",
+      "submission": {
+        "log_loss": 0.6686623076128889,
+        "brier": 0.23753394163226954,
+        "roc_auc": 0.6417794270272387,
+        "accuracy": 0.5851769911504425,
+        "precision": 0.5731922398589065,
+        "recall": 0.7096069868995634,
+        "f1": 0.6341463414634146
+      },
+      "user_average": {
+        "log_loss": 0.6521899240979019,
+        "brier": 0.22991522113262303,
+        "roc_auc": 0.624670107043576,
+        "accuracy": 0.6027190740030499,
+        "precision": 0.6079970780337844,
+        "recall": 0.6832600228006863,
+        "f1": 0.599540406059029
+      },
+      "rows": 904,
+      "users": 20,
+      "users_with_auc": 20,
+      "baseline_user_log_loss": 0.6929816380669427,
+      "sparse": false
+    },
+    {
+      "kind": "Prior attempts",
+      "label": "500+",
+      "submission": {
+        "log_loss": 0.5676983075898835,
+        "brier": 0.19225188604607693,
+        "roc_auc": 0.726617253718882,
+        "accuracy": 0.7106673161227473,
+        "precision": 0.7206295671725689,
+        "recall": 0.9296591733139956,
+        "f1": 0.811906269791007
+      },
+      "user_average": {
+        "log_loss": 0.5607790420782947,
+        "brier": 0.1895690276314441,
+        "roc_auc": 0.7168752776204251,
+        "accuracy": 0.7172943599663071,
+        "precision": 0.7462655646148606,
+        "recall": 0.8952525283428875,
+        "f1": 0.805836530341245
+      },
+      "rows": 2053,
+      "users": 15,
+      "users_with_auc": 15,
+      "baseline_user_log_loss": 0.6546961937813626,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "2-sat",
+      "submission": {
+        "log_loss": 0.7742778611632024,
+        "brier": 0.28941553640580275,
+        "roc_auc": 0.25,
+        "accuracy": 0.2,
+        "precision": 0.5,
+        "recall": 0.25,
+        "f1": 0.3333333333333333
+      },
+      "user_average": {
+        "log_loss": 0.7865567571109184,
+        "brier": 0.29482452215930066,
+        "roc_auc": 0.0,
+        "accuracy": 0.3333333333333333,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "rows": 5,
+      "users": 3,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.6069381207048955,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "No tags",
+      "submission": {
+        "log_loss": 0.6267296838542288,
+        "brier": 0.2174964090010461,
+        "roc_auc": 0.6196510297482838,
+        "accuracy": 0.6737588652482269,
+        "precision": 0.6788321167883211,
+        "recall": 0.9789473684210527,
+        "f1": 0.8017241379310345
+      },
+      "user_average": {
+        "log_loss": 0.6859147206345896,
+        "brier": 0.2466162708839072,
+        "roc_auc": 0.554176209413735,
+        "accuracy": 0.4816429725786451,
+        "precision": 0.46503159905937685,
+        "recall": 0.6597222222222222,
+        "f1": 0.5297422786553221
+      },
+      "rows": 282,
+      "users": 18,
+      "users_with_auc": 11,
+      "baseline_user_log_loss": 0.6864633964607502,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "binary search",
+      "submission": {
+        "log_loss": 0.6441296962819705,
+        "brier": 0.2258304207712935,
+        "roc_auc": 0.6726585027899488,
+        "accuracy": 0.6387096774193548,
+        "precision": 0.6530612244897959,
+        "recall": 0.7441860465116279,
+        "f1": 0.6956521739130435
+      },
+      "user_average": {
+        "log_loss": 0.6403491038356588,
+        "brier": 0.22458717449161544,
+        "roc_auc": 0.6234630783960369,
+        "accuracy": 0.6339237794815011,
+        "precision": 0.4608929440252789,
+        "recall": 0.4630608804480213,
+        "f1": 0.43671306483730415
+      },
+      "rows": 465,
+      "users": 43,
+      "users_with_auc": 26,
+      "baseline_user_log_loss": 0.6979432701719958,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "bitmasks",
+      "submission": {
+        "log_loss": 0.6102095769097802,
+        "brier": 0.21170643945243342,
+        "roc_auc": 0.7113826767292114,
+        "accuracy": 0.6608695652173913,
+        "precision": 0.683982683982684,
+        "recall": 0.7821782178217822,
+        "f1": 0.7297921478060047
+      },
+      "user_average": {
+        "log_loss": 0.5760092941153641,
+        "brier": 0.19551328622826045,
+        "roc_auc": 0.6596047953527273,
+        "accuracy": 0.718713654070797,
+        "precision": 0.5834308881637569,
+        "recall": 0.6357716590909869,
+        "f1": 0.5887574163104902
+      },
+      "rows": 345,
+      "users": 42,
+      "users_with_auc": 32,
+      "baseline_user_log_loss": 0.6873552026889213,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "brute force",
+      "submission": {
+        "log_loss": 0.5951171387836449,
+        "brier": 0.20434250473964174,
+        "roc_auc": 0.6937446836354119,
+        "accuracy": 0.6891064871481029,
+        "precision": 0.7065052950075643,
+        "recall": 0.8861480075901328,
+        "f1": 0.7861952861952862
+      },
+      "user_average": {
+        "log_loss": 0.591900397592568,
+        "brier": 0.20355186026327754,
+        "roc_auc": 0.6781038973186825,
+        "accuracy": 0.6921644102814676,
+        "precision": 0.7340642907823058,
+        "recall": 0.8326067641944275,
+        "f1": 0.7511563783209622
+      },
+      "rows": 817,
+      "users": 46,
+      "users_with_auc": 39,
+      "baseline_user_log_loss": 0.6582044261944161,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "chinese remainder theorem",
+      "submission": {
+        "log_loss": 0.5995871849214867,
+        "brier": 0.2069859166764448,
+        "roc_auc": 0.625,
+        "accuracy": 0.6428571428571429,
+        "precision": 0.7272727272727273,
+        "recall": 0.8,
+        "f1": 0.7619047619047619
+      },
+      "user_average": {
+        "log_loss": 0.6110885450952509,
+        "brier": 0.2116716183530171,
+        "roc_auc": 1.0,
+        "accuracy": 0.6818181818181818,
+        "precision": 0.6818181818181818,
+        "recall": 0.6363636363636364,
+        "f1": 0.6363636363636364
+      },
+      "rows": 14,
+      "users": 11,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.6566719007321619,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "combinatorics",
+      "submission": {
+        "log_loss": 0.6262670846393275,
+        "brier": 0.218114294516516,
+        "roc_auc": 0.705318138651472,
+        "accuracy": 0.6521739130434783,
+        "precision": 0.6717557251908397,
+        "recall": 0.7521367521367521,
+        "f1": 0.7096774193548387
+      },
+      "user_average": {
+        "log_loss": 0.6529359298122763,
+        "brier": 0.23079026476853212,
+        "roc_auc": 0.5942887521834891,
+        "accuracy": 0.6146619830549924,
+        "precision": 0.40016612175703076,
+        "recall": 0.5072150072150073,
+        "f1": 0.42844542229568966
+      },
+      "rows": 207,
+      "users": 33,
+      "users_with_auc": 19,
+      "baseline_user_log_loss": 0.7019960396067741,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "communication",
+      "submission": {
+        "log_loss": 0.6278755887548709,
+        "brier": 0.217898897566209,
+        "roc_auc": 0.7333333333333334,
+        "accuracy": 0.6428571428571429,
+        "precision": 0.5,
+        "recall": 0.4,
+        "f1": 0.4444444444444444
+      },
+      "user_average": {
+        "log_loss": 0.6155096415133722,
+        "brier": 0.2117473084598995,
+        "roc_auc": 0.5,
+        "accuracy": 0.6619047619047619,
+        "precision": 0.21428571428571427,
+        "recall": 0.19047619047619047,
+        "f1": 0.16666666666666666
+      },
+      "rows": 14,
+      "users": 7,
+      "users_with_auc": 2,
+      "baseline_user_log_loss": 0.7621005828526801,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "constructive algorithms",
+      "submission": {
+        "log_loss": 0.6267282056733101,
+        "brier": 0.2185283470264852,
+        "roc_auc": 0.701605108459698,
+        "accuracy": 0.6502463054187192,
+        "precision": 0.6525885558583107,
+        "recall": 0.8272884283246977,
+        "f1": 0.7296268088347296
+      },
+      "user_average": {
+        "log_loss": 0.6335379743343365,
+        "brier": 0.2213968356330328,
+        "roc_auc": 0.6766474282454757,
+        "accuracy": 0.6412264263539486,
+        "precision": 0.6218284175973727,
+        "recall": 0.7450118761820609,
+        "f1": 0.6491105343076163
+      },
+      "rows": 1015,
+      "users": 44,
+      "users_with_auc": 42,
+      "baseline_user_log_loss": 0.6886238036144903,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "data structures",
+      "submission": {
+        "log_loss": 0.6309494169403054,
+        "brier": 0.2202180711232998,
+        "roc_auc": 0.689596236504552,
+        "accuracy": 0.6565656565656566,
+        "precision": 0.691358024691358,
+        "recall": 0.7619047619047619,
+        "f1": 0.7249190938511327
+      },
+      "user_average": {
+        "log_loss": 0.6308384235592942,
+        "brier": 0.2202135344087156,
+        "roc_auc": 0.6289782847402016,
+        "accuracy": 0.6478236860607367,
+        "precision": 0.49760160182954305,
+        "recall": 0.5325606842652297,
+        "f1": 0.4798081708951274
+      },
+      "rows": 495,
+      "users": 44,
+      "users_with_auc": 32,
+      "baseline_user_log_loss": 0.6987548420462804,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "dfs and similar",
+      "submission": {
+        "log_loss": 0.6456100747542074,
+        "brier": 0.22706749076893387,
+        "roc_auc": 0.6762046327263719,
+        "accuracy": 0.6352941176470588,
+        "precision": 0.6363636363636364,
+        "recall": 0.7608695652173914,
+        "f1": 0.693069306930693
+      },
+      "user_average": {
+        "log_loss": 0.6776162877127518,
+        "brier": 0.24230558966479063,
+        "roc_auc": 0.6030009578544062,
+        "accuracy": 0.6258553820714657,
+        "precision": 0.3670374275392255,
+        "recall": 0.44497536945812804,
+        "f1": 0.39015671666834456
+      },
+      "rows": 255,
+      "users": 35,
+      "users_with_auc": 20,
+      "baseline_user_log_loss": 0.7118099961438299,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "divide and conquer",
+      "submission": {
+        "log_loss": 0.6134619489296405,
+        "brier": 0.21117734745020186,
+        "roc_auc": 0.7994652406417112,
+        "accuracy": 0.7307692307692307,
+        "precision": 0.6756756756756757,
+        "recall": 0.7352941176470589,
+        "f1": 0.704225352112676
+      },
+      "user_average": {
+        "log_loss": 0.6474505650356713,
+        "brier": 0.22793432597280125,
+        "roc_auc": 0.9140692640692639,
+        "accuracy": 0.6630411255411256,
+        "precision": 0.3885281385281385,
+        "recall": 0.4515151515151514,
+        "f1": 0.41093073593073587
+      },
+      "rows": 78,
+      "users": 22,
+      "users_with_auc": 11,
+      "baseline_user_log_loss": 0.7088273865987348,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "dp",
+      "submission": {
+        "log_loss": 0.6172800068712634,
+        "brier": 0.21401829999247493,
+        "roc_auc": 0.7009179467965531,
+        "accuracy": 0.660759493670886,
+        "precision": 0.6850533807829181,
+        "recall": 0.8088235294117647,
+        "f1": 0.7418111753371869
+      },
+      "user_average": {
+        "log_loss": 0.6357216334720954,
+        "brier": 0.22301744532287418,
+        "roc_auc": 0.6462619601876477,
+        "accuracy": 0.6230781803675177,
+        "precision": 0.5824859737874429,
+        "recall": 0.6412395285253302,
+        "f1": 0.5915256017907757
+      },
+      "rows": 790,
+      "users": 43,
+      "users_with_auc": 37,
+      "baseline_user_log_loss": 0.6808219379957181,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "dsu",
+      "submission": {
+        "log_loss": 0.6474510386371892,
+        "brier": 0.22773889322872698,
+        "roc_auc": 0.6919945725915876,
+        "accuracy": 0.6639344262295082,
+        "precision": 0.6756756756756757,
+        "recall": 0.746268656716418,
+        "f1": 0.7092198581560284
+      },
+      "user_average": {
+        "log_loss": 0.6468104077758288,
+        "brier": 0.22729183893315802,
+        "roc_auc": 0.6107115800865801,
+        "accuracy": 0.6670381310418906,
+        "precision": 0.3435177917320774,
+        "recall": 0.4196969696969696,
+        "f1": 0.3674911268855368
+      },
+      "rows": 122,
+      "users": 28,
+      "users_with_auc": 16,
+      "baseline_user_log_loss": 0.7133061433905199,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "expression parsing",
+      "submission": {
+        "log_loss": 0.9417286145641147,
+        "brier": 0.361428646283082,
+        "roc_auc": 0.52,
+        "accuracy": 0.26666666666666666,
+        "precision": 0.2857142857142857,
+        "recall": 0.8,
+        "f1": 0.42105263157894735
+      },
+      "user_average": {
+        "log_loss": 0.9689643837251765,
+        "brier": 0.37388771328914033,
+        "roc_auc": 1.0,
+        "accuracy": 0.25,
+        "precision": 0.25,
+        "recall": 0.2857142857142857,
+        "f1": 0.2619047619047619
+      },
+      "rows": 15,
+      "users": 14,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.743229472591463,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "fft",
+      "submission": {
+        "log_loss": 0.6476625588493055,
+        "brier": 0.22816958959590544,
+        "roc_auc": 0.6799999999999999,
+        "accuracy": 0.55,
+        "precision": 0.5454545454545454,
+        "recall": 0.6,
+        "f1": 0.5714285714285714
+      },
+      "user_average": {
+        "log_loss": 0.6418926314597175,
+        "brier": 0.22570819879973364,
+        "roc_auc": 1.0,
+        "accuracy": 0.5512820512820513,
+        "precision": 0.38461538461538464,
+        "recall": 0.34615384615384615,
+        "f1": 0.358974358974359
+      },
+      "rows": 20,
+      "users": 13,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.7157365963367762,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "flows",
+      "submission": {
+        "log_loss": 0.7038238662088112,
+        "brier": 0.2549898571857085,
+        "roc_auc": 0.5714285714285714,
+        "accuracy": 0.5555555555555556,
+        "precision": 0.3333333333333333,
+        "recall": 1.0,
+        "f1": 0.5
+      },
+      "user_average": {
+        "log_loss": 0.7241000691500971,
+        "brier": 0.26490274486908466,
+        "roc_auc": 1.0,
+        "accuracy": 0.5,
+        "precision": 0.2857142857142857,
+        "recall": 0.2857142857142857,
+        "f1": 0.2857142857142857
+      },
+      "rows": 9,
+      "users": 7,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.7689628047658499,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "games",
+      "submission": {
+        "log_loss": 0.5842957949291137,
+        "brier": 0.19932483925449562,
+        "roc_auc": 0.7262254901960784,
+        "accuracy": 0.6914893617021277,
+        "precision": 0.7066666666666667,
+        "recall": 0.8833333333333333,
+        "f1": 0.7851851851851852
+      },
+      "user_average": {
+        "log_loss": 0.5744555791406281,
+        "brier": 0.1950454972613789,
+        "roc_auc": 0.6591873706004142,
+        "accuracy": 0.7159698025551684,
+        "precision": 0.6318033592423836,
+        "recall": 0.757520325203252,
+        "f1": 0.6711019173716447
+      },
+      "rows": 188,
+      "users": 41,
+      "users_with_auc": 23,
+      "baseline_user_log_loss": 0.6647462963609617,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "geometry",
+      "submission": {
+        "log_loss": 0.6934487542958446,
+        "brier": 0.25123777394604146,
+        "roc_auc": 0.5606060606060606,
+        "accuracy": 0.47692307692307695,
+        "precision": 0.48936170212765956,
+        "recall": 0.696969696969697,
+        "f1": 0.575
+      },
+      "user_average": {
+        "log_loss": 0.7044901558645712,
+        "brier": 0.25633160159428653,
+        "roc_auc": 0.4875,
+        "accuracy": 0.4643759018759018,
+        "precision": 0.40868055555555555,
+        "recall": 0.44097222222222215,
+        "f1": 0.4109938672438673
+      },
+      "rows": 65,
+      "users": 24,
+      "users_with_auc": 8,
+      "baseline_user_log_loss": 0.7075667132548379,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "graph matchings",
+      "submission": {
+        "log_loss": 0.6863102820249161,
+        "brier": 0.24692249070669983,
+        "roc_auc": 0.5892857142857143,
+        "accuracy": 0.5652173913043478,
+        "precision": 0.36363636363636365,
+        "recall": 0.5714285714285714,
+        "f1": 0.4444444444444444
+      },
+      "user_average": {
+        "log_loss": 0.7293930573675366,
+        "brier": 0.2675055890457509,
+        "roc_auc": 0.5,
+        "accuracy": 0.48888888888888893,
+        "precision": 0.17777777777777776,
+        "recall": 0.16666666666666666,
+        "f1": 0.16444444444444445
+      },
+      "rows": 23,
+      "users": 15,
+      "users_with_auc": 3,
+      "baseline_user_log_loss": 0.7670566320121917,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "graphs",
+      "submission": {
+        "log_loss": 0.645991048171547,
+        "brier": 0.2267046299244095,
+        "roc_auc": 0.7123966942148761,
+        "accuracy": 0.6567796610169492,
+        "precision": 0.6180555555555556,
+        "recall": 0.7739130434782608,
+        "f1": 0.6872586872586872
+      },
+      "user_average": {
+        "log_loss": 0.6548710358012401,
+        "brier": 0.23072479480089308,
+        "roc_auc": 0.5936000974709562,
+        "accuracy": 0.6581211979549575,
+        "precision": 0.23202488202488203,
+        "recall": 0.32923465423465426,
+        "f1": 0.2549749260876931
+      },
+      "rows": 236,
+      "users": 33,
+      "users_with_auc": 17,
+      "baseline_user_log_loss": 0.7416262858987623,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "greedy",
+      "submission": {
+        "log_loss": 0.587845474456426,
+        "brier": 0.20133292575214304,
+        "roc_auc": 0.722893107548485,
+        "accuracy": 0.686163247490179,
+        "precision": 0.7018221976808393,
+        "recall": 0.876551724137931,
+        "f1": 0.7795154860472248
+      },
+      "user_average": {
+        "log_loss": 0.5909787469421169,
+        "brier": 0.20302529990364865,
+        "roc_auc": 0.6861791284628217,
+        "accuracy": 0.6789345749471053,
+        "precision": 0.6650499742153909,
+        "recall": 0.770000206462706,
+        "f1": 0.6969670852344015
+      },
+      "rows": 2291,
+      "users": 46,
+      "users_with_auc": 45,
+      "baseline_user_log_loss": 0.6681146939114563,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "hashing",
+      "submission": {
+        "log_loss": 0.6693328901936976,
+        "brier": 0.23823875426054353,
+        "roc_auc": 0.5803571428571428,
+        "accuracy": 0.6521739130434783,
+        "precision": 0.7857142857142857,
+        "recall": 0.6875,
+        "f1": 0.7333333333333333
+      },
+      "user_average": {
+        "log_loss": 0.6363864455917381,
+        "brier": 0.22180105077282974,
+        "roc_auc": 0.8,
+        "accuracy": 0.7948717948717949,
+        "precision": 0.7230769230769231,
+        "recall": 0.6923076923076924,
+        "f1": 0.6923076923076923
+      },
+      "rows": 23,
+      "users": 13,
+      "users_with_auc": 2,
+      "baseline_user_log_loss": 0.6195115294453722,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "implementation",
+      "submission": {
+        "log_loss": 0.5946118362785697,
+        "brier": 0.2039167866607828,
+        "roc_auc": 0.6904853684593102,
+        "accuracy": 0.6871552403467297,
+        "precision": 0.7052730696798494,
+        "recall": 0.8991596638655462,
+        "f1": 0.7905013192612137
+      },
+      "user_average": {
+        "log_loss": 0.5889576670558395,
+        "brier": 0.20181168076657505,
+        "roc_auc": 0.6783877077112159,
+        "accuracy": 0.6779191654898779,
+        "precision": 0.6584813809132968,
+        "recall": 0.768410889706002,
+        "f1": 0.688476371596718
+      },
+      "rows": 1269,
+      "users": 45,
+      "users_with_auc": 40,
+      "baseline_user_log_loss": 0.6678122876051126,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "interactive",
+      "submission": {
+        "log_loss": 0.6529877902251257,
+        "brier": 0.23023659404821978,
+        "roc_auc": 0.6397392290249433,
+        "accuracy": 0.6198347107438017,
+        "precision": 0.5428571428571428,
+        "recall": 0.3877551020408163,
+        "f1": 0.4523809523809524
+      },
+      "user_average": {
+        "log_loss": 0.6758925761731833,
+        "brier": 0.24153097870685705,
+        "roc_auc": 0.5777731092436975,
+        "accuracy": 0.5659931498095749,
+        "precision": 0.24074074074074078,
+        "recall": 0.21913580246913578,
+        "f1": 0.21849981294425738
+      },
+      "rows": 121,
+      "users": 27,
+      "users_with_auc": 14,
+      "baseline_user_log_loss": 0.7140142288822738,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "math",
+      "submission": {
+        "log_loss": 0.5923043309735092,
+        "brier": 0.20310493045475095,
+        "roc_auc": 0.6999927412350413,
+        "accuracy": 0.689673622257892,
+        "precision": 0.7096989966555184,
+        "recall": 0.8790389395194698,
+        "f1": 0.7853441894892672
+      },
+      "user_average": {
+        "log_loss": 0.599790106276738,
+        "brier": 0.2068077483401553,
+        "roc_auc": 0.6734070656316743,
+        "accuracy": 0.6704325289307895,
+        "precision": 0.6741211071917467,
+        "recall": 0.7733830049233481,
+        "f1": 0.7055990722591382
+      },
+      "rows": 1869,
+      "users": 46,
+      "users_with_auc": 43,
+      "baseline_user_log_loss": 0.666396699413209,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "matrices",
+      "submission": {
+        "log_loss": 0.6668017992521936,
+        "brier": 0.2373417282179849,
+        "roc_auc": 0.6098901098901099,
+        "accuracy": 0.6296296296296297,
+        "precision": 0.625,
+        "recall": 0.7142857142857143,
+        "f1": 0.6666666666666666
+      },
+      "user_average": {
+        "log_loss": 0.6665790052921275,
+        "brier": 0.23703752331077774,
+        "roc_auc": 0.4107142857142857,
+        "accuracy": 0.5952380952380952,
+        "precision": 0.24404761904761904,
+        "recall": 0.2755102040816327,
+        "f1": 0.2571428571428571
+      },
+      "rows": 27,
+      "users": 14,
+      "users_with_auc": 4,
+      "baseline_user_log_loss": 0.7270270041853676,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "meet-in-the-middle",
+      "submission": {
+        "log_loss": 0.46594828894498286,
+        "brier": 0.14019690770314672,
+        "roc_auc": 1.0,
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "user_average": {
+        "log_loss": 0.46594828894498286,
+        "brier": 0.14019690770314672,
+        "roc_auc": null,
+        "accuracy": 1.0,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "rows": 3,
+      "users": 3,
+      "users_with_auc": 0,
+      "baseline_user_log_loss": 0.7403702134609756,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "number theory",
+      "submission": {
+        "log_loss": 0.6274652234755049,
+        "brier": 0.21887503409247494,
+        "roc_auc": 0.6850383271800136,
+        "accuracy": 0.6586345381526104,
+        "precision": 0.662125340599455,
+        "recall": 0.8408304498269896,
+        "f1": 0.7408536585365854
+      },
+      "user_average": {
+        "log_loss": 0.6269056229521722,
+        "brier": 0.21904991093125833,
+        "roc_auc": 0.6632325736640948,
+        "accuracy": 0.6395351526248455,
+        "precision": 0.5262645672489537,
+        "recall": 0.6723925793009241,
+        "f1": 0.5684202443228799
+      },
+      "rows": 498,
+      "users": 43,
+      "users_with_auc": 33,
+      "baseline_user_log_loss": 0.6932002551466967,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "probabilities",
+      "submission": {
+        "log_loss": 0.6534422789459728,
+        "brier": 0.23019380286087837,
+        "roc_auc": 0.6977777777777778,
+        "accuracy": 0.6333333333333333,
+        "precision": 0.6666666666666666,
+        "recall": 0.5333333333333333,
+        "f1": 0.5925925925925926
+      },
+      "user_average": {
+        "log_loss": 0.676874387821022,
+        "brier": 0.241312099708846,
+        "roc_auc": 0.6,
+        "accuracy": 0.5857142857142857,
+        "precision": 0.3076923076923077,
+        "recall": 0.23846153846153847,
+        "f1": 0.26282051282051283
+      },
+      "rows": 30,
+      "users": 13,
+      "users_with_auc": 2,
+      "baseline_user_log_loss": 0.7111617817279963,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "schedules",
+      "submission": {
+        "log_loss": 0.8116061346307836,
+        "brier": 0.30305535611059,
+        "roc_auc": 0.5111111111111112,
+        "accuracy": 0.42424242424242425,
+        "precision": 0.43333333333333335,
+        "recall": 0.8666666666666667,
+        "f1": 0.5777777777777777
+      },
+      "user_average": {
+        "log_loss": 0.8064312653217527,
+        "brier": 0.3005116073567844,
+        "roc_auc": 0.3333333333333333,
+        "accuracy": 0.4444444444444444,
+        "precision": 0.3888888888888889,
+        "recall": 0.5555555555555556,
+        "f1": 0.44259259259259254
+      },
+      "rows": 33,
+      "users": 18,
+      "users_with_auc": 6,
+      "baseline_user_log_loss": 0.7136837949097596,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "shortest paths",
+      "submission": {
+        "log_loss": 0.7060005749192629,
+        "brier": 0.25579347002242153,
+        "roc_auc": 0.5353260869565218,
+        "accuracy": 0.5128205128205128,
+        "precision": 0.42857142857142855,
+        "recall": 0.5625,
+        "f1": 0.4864864864864865
+      },
+      "user_average": {
+        "log_loss": 0.7280655182236337,
+        "brier": 0.266366001096767,
+        "roc_auc": 0.8166666666666667,
+        "accuracy": 0.5253623188405797,
+        "precision": 0.1956521739130435,
+        "recall": 0.2608695652173913,
+        "f1": 0.21739130434782608
+      },
+      "rows": 39,
+      "users": 23,
+      "users_with_auc": 5,
+      "baseline_user_log_loss": 0.7307979111545613,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "sortings",
+      "submission": {
+        "log_loss": 0.6145937863765008,
+        "brier": 0.21411330213333535,
+        "roc_auc": 0.683044185416102,
+        "accuracy": 0.639344262295082,
+        "precision": 0.6666666666666666,
+        "recall": 0.8172043010752689,
+        "f1": 0.7342995169082126
+      },
+      "user_average": {
+        "log_loss": 0.6340595645975553,
+        "brier": 0.2240159605043098,
+        "roc_auc": 0.580645593108576,
+        "accuracy": 0.590272715946313,
+        "precision": 0.5434057979502073,
+        "recall": 0.650865730130436,
+        "f1": 0.5701401084891694
+      },
+      "rows": 610,
+      "users": 45,
+      "users_with_auc": 38,
+      "baseline_user_log_loss": 0.670560985610681,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "string suffix structures",
+      "submission": {
+        "log_loss": 0.5600694280306729,
+        "brier": 0.18486738736345348,
+        "roc_auc": 0.8095238095238095,
+        "accuracy": 0.9,
+        "precision": 1.0,
+        "recall": 0.6666666666666666,
+        "f1": 0.8
+      },
+      "user_average": {
+        "log_loss": 0.5748285400467675,
+        "brier": 0.19178516710504098,
+        "roc_auc": 1.0,
+        "accuracy": 0.9166666666666666,
+        "precision": 0.3333333333333333,
+        "recall": 0.3333333333333333,
+        "f1": 0.3333333333333333
+      },
+      "rows": 10,
+      "users": 6,
+      "users_with_auc": 1,
+      "baseline_user_log_loss": 0.7203553995475637,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "strings",
+      "submission": {
+        "log_loss": 0.5759100091346578,
+        "brier": 0.1955255855926453,
+        "roc_auc": 0.6515232292460016,
+        "accuracy": 0.6952908587257618,
+        "precision": 0.7419354838709677,
+        "recall": 0.8846153846153846,
+        "f1": 0.8070175438596491
+      },
+      "user_average": {
+        "log_loss": 0.6026862693713313,
+        "brier": 0.20918732225684844,
+        "roc_auc": 0.6105282531002708,
+        "accuracy": 0.6350173561099348,
+        "precision": 0.6159242744721606,
+        "recall": 0.7308474550603486,
+        "f1": 0.6571038039427015
+      },
+      "rows": 361,
+      "users": 42,
+      "users_with_auc": 28,
+      "baseline_user_log_loss": 0.6449391947355004,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "ternary search",
+      "submission": {
+        "log_loss": 0.6322741270400054,
+        "brier": 0.22034050502629512,
+        "roc_auc": 0.75,
+        "accuracy": 0.7058823529411765,
+        "precision": 0.7,
+        "recall": 0.7777777777777778,
+        "f1": 0.7368421052631579
+      },
+      "user_average": {
+        "log_loss": 0.6062410805376389,
+        "brier": 0.20778918176383582,
+        "roc_auc": 0.7777777777777778,
+        "accuracy": 0.8066666666666666,
+        "precision": 0.54,
+        "recall": 0.55,
+        "f1": 0.5238095238095238
+      },
+      "rows": 17,
+      "users": 10,
+      "users_with_auc": 3,
+      "baseline_user_log_loss": 0.6867305121730315,
+      "sparse": true
+    },
+    {
+      "kind": "Topic",
+      "label": "trees",
+      "submission": {
+        "log_loss": 0.6496022647366665,
+        "brier": 0.22898340716404053,
+        "roc_auc": 0.6741725447639718,
+        "accuracy": 0.6255924170616114,
+        "precision": 0.6521739130434783,
+        "recall": 0.6578947368421053,
+        "f1": 0.6550218340611353
+      },
+      "user_average": {
+        "log_loss": 0.6180660401891704,
+        "brier": 0.21361050170890264,
+        "roc_auc": 0.6023514139047228,
+        "accuracy": 0.6908841548315231,
+        "precision": 0.4450198412698413,
+        "recall": 0.4749965883789413,
+        "f1": 0.4418830776895293
+      },
+      "rows": 211,
+      "users": 30,
+      "users_with_auc": 20,
+      "baseline_user_log_loss": 0.6995799558221876,
+      "sparse": false
+    },
+    {
+      "kind": "Topic",
+      "label": "two pointers",
+      "submission": {
+        "log_loss": 0.6403350909985872,
+        "brier": 0.2249804179989946,
+        "roc_auc": 0.640044994375703,
+        "accuracy": 0.6222910216718266,
+        "precision": 0.6666666666666666,
+        "recall": 0.7551020408163265,
+        "f1": 0.7081339712918661
+      },
+      "user_average": {
+        "log_loss": 0.6192839475228903,
+        "brier": 0.2151511390756555,
+        "roc_auc": 0.5770037677075492,
+        "accuracy": 0.6523306595365419,
+        "precision": 0.5189072964072964,
+        "recall": 0.5816230936819171,
+        "f1": 0.5268915114840413
+      },
+      "rows": 323,
+      "users": 45,
+      "users_with_auc": 28,
+      "baseline_user_log_loss": 0.6866581217799536,
+      "sparse": false
+    }
+  ],
+  "errors": [
+    {
+      "analysis_id": "cohort_108",
+      "problem_id": "2160:A",
+      "target": 0,
+      "problem_tags": [
+        "math"
+      ],
+      "problem_rating": 800,
+      "historical_rating": 2090,
+      "prior_problems_attempted": 910,
+      "probability": 0.924119508353154
+    },
+    {
+      "analysis_id": "cohort_116",
+      "problem_id": "2184:A",
+      "target": 0,
+      "problem_tags": [
+        "math"
+      ],
+      "problem_rating": 800,
+      "historical_rating": 1978,
+      "prior_problems_attempted": 1422,
+      "probability": 0.9110018942453665
+    },
+    {
+      "analysis_id": "cohort_108",
+      "problem_id": "2145:A",
+      "target": 0,
+      "problem_tags": [
+        "math"
+      ],
+      "problem_rating": 800,
+      "historical_rating": 2090,
+      "prior_problems_attempted": 881,
+      "probability": 0.9085252046038877
+    },
+    {
+      "analysis_id": "cohort_050",
+      "problem_id": "865:D",
+      "target": 1,
+      "problem_tags": [
+        "constructive algorithms",
+        "data structures",
+        "greedy"
+      ],
+      "problem_rating": 2400,
+      "historical_rating": 358,
+      "prior_problems_attempted": 30,
+      "probability": 0.24542286325928786
+    },
+    {
+      "analysis_id": "cohort_028",
+      "problem_id": "2172:M",
+      "target": 1,
+      "problem_tags": [
+        "graphs",
+        "shortest paths"
+      ],
+      "problem_rating": 1400,
+      "historical_rating": null,
+      "prior_problems_attempted": 1,
+      "probability": 0.25483354761080457
+    },
+    {
+      "analysis_id": "cohort_024",
+      "problem_id": "2172:M",
+      "target": 1,
+      "problem_tags": [
+        "graphs",
+        "shortest paths"
+      ],
+      "problem_rating": 1400,
+      "historical_rating": null,
+      "prior_problems_attempted": 1,
+      "probability": 0.267606721977191
+    }
+  ]
+}

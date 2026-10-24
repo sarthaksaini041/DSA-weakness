@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="An undergraduate ML study of Codeforces first attempts, topic evidence and practice recommendations."
+    />
+    <title>DSA Compass · Practice with evidence</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header>
+      <a class="brand" href="#main"><span class="mark" aria-hidden="true">→</span> DSA Compass</a>
+      <nav aria-label="Main navigation">
+        <a href="#explore">Explore</a><a href="#results">Results</a><a href="#study">The study</a
+        ><a href="#reproduce">Reproduce</a>
+      </nav>
+      <span class="course">ES 335 · ML project</span>
+    </header>
+    <main id="main">
+      <section class="hero">
+        <div>
+          <p class="eyebrow">CODEFORCES · PRACTICE, INFORMED BY HISTORY</p>
+          <h1>Your next problem.<br /><em>A little more informed.</em></h1>
+          <p class="intro">
+            Explore topic evidence, find new problems, and see what a machine-learning model can—and
+            cannot—tell us about practice.
+          </p>
+          <a class="button" href="#explore"
+            >Explore the examples <span aria-hidden="true">→</span></a
+          >
+        </div>
+        <aside class="hero-note">
+          <span class="tag">THE RESEARCH QUESTION</span>
+          <h2>Can past submissions predict first-attempt acceptance?</h2>
+          <p>
+            Three models. One simple baseline. Separate tests for future submissions and unseen
+            users.
+          </p>
+          <a href="#results">See the evidence →</a>
+        </aside>
+      </section>
+      <div class="stats" aria-label="Study dataset">
+        <div><strong>120</strong><span>users across six rating groups</span></div>
+        <div><strong>100,919</strong><span>public submissions collected</span></div>
+        <div><strong>41,828</strong><span>eligible first-attempt rows</span></div>
+        <div><strong>3 + 1</strong><span>models and a baseline</span></div>
+      </div>
+      <section id="explore">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">01 / EXPLORE PRACTICE</p>
+            <h2>A history, not a verdict.</h2>
+          </div>
+          <span class="tag">SAVED EXAMPLES · 23 OCT 2026</span>
+        </div>
+        <p class="section-intro">
+          These are real, precomputed examples from our dataset. Live lookup for arbitrary handles
+          is not available. Suggestions reflect the saved history, so a problem may have been
+          attempted since capture.
+        </p>
+        <noscript
+          ><p class="notice">
+            Enable JavaScript to explore the examples. The study description and report links below
+            remain available.
+          </p></noscript
+        >
+        <p id="load-status" class="notice" role="status">Loading saved examples…</p>
+        <div id="explorer" hidden>
+          <form id="user-form" class="user-form">
+            <label for="handle">Saved Codeforces handle</label>
+            <div class="input-row">
+              <input
+                id="handle"
+                list="handles"
+                value="ethanxupro"
+                autocomplete="off"
+                required
+                aria-describedby="handle-help"
+              /><datalist id="handles"></datalist><button type="submit">Explore history →</button>
+            </div>
+            <p id="handle-help" class="small">
+              Choose ethanxupro, BaJIuK, or rahma_hisham925. Handles are matched without case
+              sensitivity.
+            </p>
+            <p id="handle-error" role="alert"></p>
+          </form>
+          <div id="user-summary" class="summary" aria-live="polite"></div>
+          <div class="section-heading compact">
+            <h3>Topic evidence</h3>
+            <span class="small">Latest 200 eligible, mature attempts after training</span>
+          </div>
+          <p class="small">
+            A practice candidate has a negative model-adjusted contrast against this user's other
+            problems in the same 400-rating bands. It is a descriptive signal, not a proven
+            weakness. Select a topic to filter the problems below.
+          </p>
+          <div id="topics" class="topics"></div>
+          <details>
+            <summary>How much evidence is enough?</summary>
+            <p>
+              The display requires 30 recent eligible attempts overall, 10 matched topic attempts,
+              10 distinct comparison problems, and a historical user rating. These are conservative
+              product rules, not validated reliability thresholds. Unseen topics mean insufficient
+              evidence. Rate intervals are descriptive; attempts are correlated and tags overlap.
+            </p>
+            <p>
+              Topic comparisons use the actual outcome minus the model's historical prediction,
+              relative to other problems at similar difficulty. Missing-difficulty rows do not enter
+              matched comparisons.
+            </p>
+          </details>
+          <div class="section-heading compact">
+            <h3>New problems to try</h3>
+            <span id="candidate-count" class="small" role="status"></span>
+          </div>
+          <form id="filters" class="filters">
+            <div>
+              <label for="topic-filter">Topic</label
+              ><select id="topic-filter">
+                <option value="">All topics</option>
+              </select>
+            </div>
+            <div>
+              <label for="min-rating">Minimum difficulty</label
+              ><input id="min-rating" type="number" step="100" min="800" />
+            </div>
+            <div>
+              <label for="max-rating">Maximum difficulty</label
+              ><input id="max-rating" type="number" step="100" min="800" />
+            </div>
+            <button type="button" id="reset">Reset filters</button>
+          </form>
+          <p id="range-note" class="small"></p>
+          <p id="filter-error" role="alert"></p>
+          <div id="problems" class="problems" aria-live="polite"></div>
+          <button id="show-more" class="secondary" type="button" hidden>Show more problems</button>
+          <p class="small">
+            All previously attempted problems are excluded from the saved history. Supported topic
+            matches come first, followed by estimated acceptance. This can favor easier practice;
+            learning benefits have not been measured. No probability is a guarantee.
+          </p>
+        </div>
+      </section>
+      <section id="results">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">02 / THE EVIDENCE</p>
+            <h2>Better than guessing? Test it.</h2>
+          </div>
+          <span class="tag">FINAL TESTS · SETTINGS FROZEN</span>
+        </div>
+        <p class="section-intro">
+          Random Forest was selected using validation user-averaged log loss. Gradient Boosting
+          scored slightly better on the final tests; we retained the model selected before testing.
+          Final results were not used to change parameters.
+        </p>
+        <div class="filters">
+          <div>
+            <label for="test-select">Evaluation population</label
+            ><select id="test-select">
+              <option value="temporal_test">Future submissions</option>
+              <option value="unseen_user_test">Unseen users</option>
+            </select>
+          </div>
+          <div>
+            <label for="weight-select">How to average</label
+            ><select id="weight-select">
+              <option value="user_average">Each user equally</option>
+              <option value="submission">Each submission equally</option>
+            </select>
+          </div>
+        </div>
+        <p id="test-summary" class="summary" aria-live="polite"></p>
+        <div class="table-wrap">
+          <table>
+            <caption>
+              Frozen model comparison · lower log loss and Brier are better
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Model</th>
+                <th scope="col">Log loss</th>
+                <th scope="col">Brier</th>
+                <th scope="col">ROC-AUC</th>
+                <th scope="col">Precision</th>
+                <th scope="col">Recall</th>
+                <th scope="col">F1</th>
+              </tr>
+            </thead>
+            <tbody id="metrics"></tbody>
+          </table>
+        </div>
+        <p id="uncertainty" class="notice"></p>
+        <p class="small">
+          Log loss penalizes confident wrong predictions. Brier measures squared probability error.
+          ROC-AUC measures ranking, not calibration. Precision, recall and F1 use acceptance as the
+          positive class and threshold 0.5. User ROC-AUC omits users with only one outcome;
+          undefined precision/recall/F1 are zero.
+        </p>
+        <details>
+          <summary>Calibration: do predicted probabilities match observed outcomes?</summary>
+          <img
+            src="images/test_calibration.png"
+            alt="Reliability diagrams and sample counts for future-submission and unseen-user tests. Acceptance probabilities generally underestimate observed acceptance in much of the range."
+            loading="lazy"
+          />
+          <p>
+            Fixed bins of width 0.1. Some extreme bins contain very few observations. No calibration
+            mapping was fitted on test labels.
+          </p>
+        </details>
+        <h3>Where the model struggles</h3>
+        <p>
+          The unseen-user test has only 17 users; the paired uncertainty interval includes no
+          improvement over baseline. Unseen users without a prior rating perform worse than baseline
+          (82 rows from 3 users). Only 3 unseen-user rows have no judged history. Sparse evidence
+          cannot support reliable weakness rankings.
+        </p>
+        <details>
+          <summary>Inspect actual validation errors</summary>
+          <p>
+            These are the three most confident false positives and false negatives at threshold
+            0.5—not typical error frequencies. Code quality and preparation are unobserved.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <caption>
+                Diagnostic validation examples
+              </caption>
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Problem</th>
+                  <th>Topics</th>
+                  <th>Predicted acceptance</th>
+                  <th>Actual</th>
+                </tr>
+              </thead>
+              <tbody id="errors"></tbody>
+            </table>
+          </div>
+        </details>
+        <p>
+          <a
+            class="report"
+            href="https://github.com/sarthaksaini041/DSA-weakness/blob/main/reports/test_results.md"
+            >Full results, subgroup counts and uncertainty →</a
+          >
+        </p>
+      </section>
+      <section id="study">
+        <p class="eyebrow">03 / HOW THE STUDY WORKS</p>
+        <h2>Make the assumptions visible.</h2>
+        <div class="study-grid">
+          <article>
+            <span class="step">01</span>
+            <h3>One row, one first attempt</h3>
+            <p>
+              A row is a user's first recorded submission to a contest/index problem. Target 1 is
+              accepted; 0 is a finalized judged rejection. Team submissions, special problems,
+              compilation errors and other excluded verdicts do not become modeling rows. A later
+              retry never replaces an excluded first attempt.
+            </p>
+          </article>
+          <article>
+            <span class="step">02</span>
+            <h3>A varied, imperfect sample</h3>
+            <p>
+              The public Codeforces API supplies profiles, rating histories, submissions and the
+              problem catalog. We collected 20 users in each of six current-rating groups, mixing
+              active and broad rated directories. Unrated users come from a recent-submission
+              sample. This is not a representative sample of all users.
+            </p>
+          </article>
+          <article>
+            <span class="step">03</span>
+            <h3>Only earlier information</h3>
+            <p>
+              17 numeric inputs plus topic tags describe past attempts, acceptance, activity,
+              historical user rating and problem difficulty. Outcomes enter history after a one-day
+              delay. Equal-second events cannot inform each other. Medians, missing flags, scaling
+              and tag vocabulary are fitted only on training data.
+            </p>
+          </article>
+          <article>
+            <span class="step">04</span>
+            <h3>Split before selecting</h3>
+            <p>
+              Training: 22,752 rows. Validation: 4,875. Future test: 4,876. Unseen-user test: 1,182.
+              We hold out users within rating groups, then split development users chronologically.
+              Earlier unseen-user history supplies context, never training rows. Training weights
+              give each user equal total influence.
+            </p>
+          </article>
+        </div>
+        <details>
+          <summary>Inspect cohort coverage and data quality</summary>
+          <img
+            src="images/cohort_coverage.png"
+            alt="Coverage of 120 users: 20 in each rating group, varied history sizes and submission recency."
+            loading="lazy"
+          />
+          <p>
+            11,820 submissions lack problem difficulty, 11,265 lack tags, and 6,598 involve teams.
+            These are raw submission counts, not model-row counts. The largest user supplies 7.6% of
+            eligible rows; the top 10% supply 48.9%. Learned missing-value handling and equal-user
+            training weights address part of this imbalance. Collection requests are paced and
+            cached; historical metadata corrections remain possible.
+          </p>
+        </details>
+        <h3>Why these methods?</h3>
+        <div class="methods">
+          <article>
+            <h4>Acceptance-rate baseline</h4>
+            <p>
+              A constant equal-user-weighted training acceptance probability. A meaningful reference
+              for judging added complexity.
+            </p>
+          </article>
+          <article>
+            <h4>Logistic Regression</h4>
+            <p>
+              Regularized linear log odds. Simple and useful, but nonlinear interactions may be
+              missed.
+            </p>
+          </article>
+          <article>
+            <h4>Random Forest <span class="pill">Selected</span></h4>
+            <p>
+              Averages nonlinear trees. Depth and minimum leaf size constrain overfitting; selected
+              on validation log loss.
+            </p>
+          </article>
+          <article>
+            <h4>Gradient Boosting</h4>
+            <p>
+              Adds shallow trees sequentially to optimize log loss. A second nonlinear method for
+              structured features.
+            </p>
+          </article>
+        </div>
+        <h3>What we can conclude</h3>
+        <p>
+          History offers predictive signal for first-attempt acceptance in this cohort. Random
+          Forest improves average log loss over the baseline on both final tests, but evidence for
+          reliable unseen-user improvement is limited. Prediction is not a diagnosis of intelligence
+          or DSA mastery, and recommendation effectiveness requires a prospective study.
+        </p>
+        <p>
+          Problem ratings and tags are collection-time snapshots. Historical verdict availability is
+          unknown. A seven-day lag check yields validation log loss 0.6107, versus 0.6074
+          originally; removing difficulty yields 0.6316. These checks reduce confidence in
+          simplistic claims, not the need to state remaining bias. Self-selected attempted problems
+          differ from arbitrary new recommendations.
+        </p>
+      </section>
+      <section id="reproduce">
+        <p class="eyebrow">04 / OPEN & REPRODUCIBLE</p>
+        <h2>Follow the work.</h2>
+        <div class="study-grid">
+          <article>
+            <h3>Data, code, and reports</h3>
+            <p>
+              The repository contains the reviewed raw-data archive and checksum, frozen split
+              metadata, scripts, tests, model settings and results. Public handles are shown only
+              for the saved examples.
+            </p>
+            <a class="button" href="https://github.com/sarthaksaini041/DSA-weakness"
+              >Open the repository →</a
+            >
+            <p>
+              <a href="https://github.com/sarthaksaini041/DSA-weakness/blob/main/README.md"
+                >Setup and reproduction commands</a
+              >
+              ·
+              <a
+                href="https://github.com/sarthaksaini041/DSA-weakness/blob/main/reports/recommendations.md"
+                >Recommendation rules</a
+              >
+            </p>
+          </article>
+          <article>
+            <h3>Sources and disclosure</h3>
+            <p>
+              Data: <a href="https://codeforces.com/apiHelp">Codeforces public API</a>. Modeling:
+              <a href="https://scikit-learn.org/stable/">scikit-learn</a>. Course: ES 335
+              undergraduate project, following the supplied course rubric.
+            </p>
+            <p>
+              OpenAI Codex assisted with planning, code, tests and writing. Students must
+              independently review the work.
+              <a href="https://github.com/sarthaksaini041/DSA-weakness/blob/main/ai_usage.md"
+                >Full AI disclosure</a
+              >.
+            </p>
+            <p>
+              Student names, roll numbers, individual contribution statements and defense notes
+              remain to be supplied by the team. We do not claim these are complete.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <a class="brand" href="#main">→ DSA Compass</a>
+      <p>Practice suggestions, with their evidence and limits.</p>
+      <a href="#explore">Back to explorer ↑</a>
+    </footer>
+  </body>
+</html>

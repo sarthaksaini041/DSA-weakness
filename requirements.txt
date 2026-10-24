@@ -1,2 +1,6 @@
-# Needed only for aggregate audit plots. Collection/features use the standard library.
+# Plots and reproducible model training. Collection/features use the standard library.
 matplotlib==3.10.8
+numpy==2.3.5
+scipy==1.17.0
+scikit-learn==1.8.0
+joblib==1.5.3

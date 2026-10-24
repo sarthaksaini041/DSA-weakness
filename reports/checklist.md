@@ -78,43 +78,46 @@ the user's instruction not to add an assistant as author or co-author.
 
 The proposal, sampling plan, API validation, and [120-user data report](data_report.md) exist.
 Full-cohort historical features and split artifacts are frozen; all declared coverage gates passed,
-with recruitment, historical-availability, and sparse-group limitations disclosed. Learned
-preprocessing, models, performance evaluation, website, deployment, student details, contribution
-statements, and final submission remain unfinished. They must stay marked pending until supported by
-evidence.
+with recruitment, historical-availability, and sparse-group limitations disclosed. Training-only
+preprocessing, model comparison, validation diagnostics, and frozen final evaluation are documented
+in `model_results.md`, `model_checks.md`, and `test_results.md`. Offline topic analysis and
+recommendations are implemented in `recommend.py` and documented in `recommendations.md`. The static
+website and its meaningful interactions are implemented and locally browser-tested (see
+`website.md`). Deployment, student details, contribution statements, and final submission remain
+unfinished. They must stay marked pending until supported by evidence.
 
 ## Rubric and evidence checklist
 
 This checklist is a completion gate, not a claim that the criteria are already satisfied. Update
 evidence as work is completed. Accuracy alone is not sufficient.
 
-| Criterion                               |  Points | Evidence required                                                                                                          | Current status                                                                                                                  |
-| --------------------------------------- | ------: | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| Problem formulation and scope           |      10 | Question, target, row meaning, prediction time, available inputs, and limits                                               | Defined in proposal; validate assumptions with data                                                                             |
-| Data understanding                      |      10 | Source, actual size, variables, access limits, missingness, participation and sampling audits                              | 120-user cohort, aggregate plots, distributions, and limitations documented in `data_report.md`                                 |
-| Preprocessing and statistical reasoning |      10 | Justified cleaning, plots, training-only transformations, temporal feature audit                                           | Full-cohort features, temporal tests, missingness audit, and data plots implemented; learned preprocessing pending              |
-| Baseline and method selection           |      15 | Acceptance-rate baseline; objectives, assumptions, and rationale for Logistic Regression, Random Forest, Gradient Boosting | Defined; training pending                                                                                                       |
-| Evaluation design and metrics           |      20 | Frozen time splits, validation-only tuning, held-out final test, justified probability/classification metrics              | Full-cohort manifests frozen; all declared coverage gates pass, including user-disjoint test; model fitting and results pending |
-| Results, errors, and limitations        |      10 | Baseline comparison, representative errors, uncertainty, calibration, subgroup limits, no causal overclaim                 | Pending models and evaluation                                                                                                   |
-| Reproducibility and technical integrity |       5 | Data access, capture metadata, seeds, dependencies, split details, commands, responsible data handling                     | Phase 2 commands and offline tests available; full pipeline pending                                                             |
-| Interactive website                     |      10 | Clear, navigable static site published on GitHub Pages, explaining evidence and conclusions                                | Pending                                                                                                                         |
-| Useful interaction                      |       5 | Handle/example selection, topic evidence, difficulty filtering, and explained recommendations that help inspect results    | Planned; not implemented                                                                                                        |
-| Individual understanding and defense    |       5 | Each student explains contribution, choices, evaluation, limitation, and effects of a small change                         | Team details and defense notes pending                                                                                          |
-| **Total**                               | **100** | **80 shared ML reasoning + 20 ES 335 deliverable**                                                                         | **No score claimed**                                                                                                            |
+| Criterion                               |  Points | Evidence required                                                                                                          | Current status                                                                                                                                                     |
+| --------------------------------------- | ------: | -------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Problem formulation and scope           |      10 | Question, target, row meaning, prediction time, available inputs, and limits                                               | Defined in proposal; validate assumptions with data                                                                                                                |
+| Data understanding                      |      10 | Source, actual size, variables, access limits, missingness, participation and sampling audits                              | 120-user cohort, aggregate plots, distributions, and limitations documented in `data_report.md`                                                                    |
+| Preprocessing and statistical reasoning |      10 | Justified cleaning, plots, training-only transformations, temporal feature audit                                           | Full-cohort features, temporal tests, missingness audit, and data plots implemented; training-only learned preprocessing implemented                               |
+| Baseline and method selection           |      15 | Acceptance-rate baseline; objectives, assumptions, and rationale for Logistic Regression, Random Forest, Gradient Boosting | Baseline and all three models fitted; validation comparison in `model_results.md`                                                                                  |
+| Evaluation design and metrics           |      20 | Frozen time splits, validation-only tuning, held-out final test, justified probability/classification metrics              | Full-cohort manifests frozen; all declared coverage gates pass, including user-disjoint test; validation and frozen final results available in `test_results.md`   |
+| Results, errors, and limitations        |      10 | Baseline comparison, representative errors, uncertainty, calibration, subgroup limits, no causal overclaim                 | Validation sensitivity, calibration, user-bootstrap intervals and error/subgroup analysis in `model_checks.md`; final metrics and uncertainty in `test_results.md` |
+| Reproducibility and technical integrity |       5 | Data access, capture metadata, seeds, dependencies, split details, commands, responsible data handling                     | Collection through final-evaluation commands, hashes and tests available; static export and browser checks available; published-site verification pending          |
+| Interactive website                     |      10 | Clear, navigable static site published on GitHub Pages, explaining evidence and conclusions                                | Static site implemented and locally browser-tested; GitHub Pages publication pending                                                                               |
+| Useful interaction                      |       5 | Handle/example selection, topic evidence, difficulty filtering, and explained recommendations that help inspect results    | Saved-handle selection, topic/difficulty filters, and test/averaging comparison implemented; local browser checks pass                                             |
+| Individual understanding and defense    |       5 | Each student explains contribution, choices, evaluation, limitation, and effects of a small change                         | Team details and defense notes pending                                                                                                                             |
+| **Total**                               | **100** | **80 shared ML reasoning + 20 ES 335 deliverable**                                                                         | **No score claimed**                                                                                                                                               |
 
 ## Final website sections
 
-- [ ] Question and prediction scope
-- [ ] Data source, row meaning, collection date, cohort size, and data quality
-- [ ] Varied user cohort verified against `sampling.md`, including target-versus-actual rating
+- [x] Question and prediction scope
+- [x] Data source, row meaning, collection date, cohort size, and data quality
+- [x] Varied user cohort verified against `sampling.md`, including target-versus-actual rating
       counts, activity/history coverage, and user dominance
-- [ ] Preprocessing and leakage prevention
-- [ ] Baseline and three methods with reasons
-- [ ] Evaluation splits and metrics
-- [ ] Results and useful interactive exploration
-- [ ] Representative errors, uncertainty, and limitations
-- [ ] Conclusions supported by evidence
-- [ ] Reproduction steps, references, and AI assistance disclosure
+- [x] Preprocessing and leakage prevention
+- [x] Baseline and three methods with reasons
+- [x] Evaluation splits and metrics
+- [x] Results and useful interactive exploration
+- [x] Representative errors, uncertainty, and limitations
+- [x] Conclusions supported by evidence
+- [x] Reproduction steps, references, and AI assistance disclosure
 - [ ] Verified GitHub Pages deployment
 - [ ] Individual contribution and defense notes
 

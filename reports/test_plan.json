@@ -1,0 +1,110 @@
+{
+  "frozen_at_utc": "2026-10-24T09:00:40.931712+00:00",
+  "selected": "Random Forest depth=16",
+  "comparisons": [
+    "Acceptance-rate baseline",
+    "Logistic Regression C=0.1",
+    "Random Forest depth=16",
+    "Gradient Boosting depth=2"
+  ],
+  "threshold": 0.5,
+  "primary_metric": "user_average.log_loss",
+  "test_splits": [
+    "temporal_test",
+    "unseen_user_test"
+  ],
+  "training_policy": "Original training-only fits; no train+validation refit",
+  "feature_policy": "Original features, one-day outcome lag; train-fitted preprocessing unchanged",
+  "calibration_policy": "No additional calibration fit",
+  "sensitivity_decision": "Retain original specification; seven-day and no-difficulty variants were robustness checks",
+  "test_use": "Report all results without changing model, threshold, or feature choices",
+  "artifact_sha256": "960ef5c7a7d4b08b5c7177e27b8ab3150ab4717e5b6567fcb2eec845d1226dd7",
+  "data_sha256": {
+    "features.json": "4eff63227c6058e4c22da9ca274bea4bdb52e9439db3ebf9bac7be8368ca4bb3",
+    "schema.json": "7c42bc4d2667bab28d24e07d0acdf002b6f738ff68faef03d686ad896a3643d7",
+    "splits.json": "9ec7f4b0af9e6e996e4392362e80d31e4017dcc9793055d765d1fccc1210ecec",
+    "manifest.json": "2a1fcf65e9d28bdb32ddb5b60f6adcccc7ba0e589a74cef660613b3a997e3430",
+    "coverage_gates.json": "3380d4c4cdbf4821637460929b324f27afbd2dd80fa441ed78a76d99324db79d"
+  },
+  "development_sha256": {
+    "model_results.json": "b35c35eda101dc4c56e53c20fb62ee2f0dcb0f409cbb2c85d4062f6b75bf720b",
+    "model_checks.json": "555287cc209de6ed44fe89e062537105a03c3b3eeb81e34196e1cf531e8976d7"
+  },
+  "code_sha256": {
+    "code/test_models.py": "b88b48ac4c17952ab4b1922108c03543d7f6b24bca60e75078903babec260ff4",
+    "code/train_models.py": "2b72a2597115964cca2ca7f06f14aafa803fd7f46a713e64064298729961b709",
+    "code/check_models.py": "ecf9fa38f480d273c767a061ccf5b2f7912dce569b21abcdfd9dd606838e89de"
+  },
+  "model_parameters": {
+    "Acceptance-rate baseline": {
+      "probability": 0.5597574566751012
+    },
+    "Logistic Regression C=0.1": {
+      "C": 0.1,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": 0.0,
+      "max_iter": 3000,
+      "n_jobs": null,
+      "penalty": "deprecated",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "Random Forest depth=16": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 16,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 10,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 200,
+      "n_jobs": 2,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "Gradient Boosting depth=2": {
+      "ccp_alpha": 0.0,
+      "criterion": "friedman_mse",
+      "init": null,
+      "learning_rate": 0.05,
+      "loss": "log_loss",
+      "max_depth": 2,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 20,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "n_estimators": 100,
+      "n_iter_no_change": null,
+      "random_state": 42,
+      "subsample": 1.0,
+      "tol": 0.0001,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "versions": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "joblib": "1.5.3"
+  },
+  "bootstrap_seed": 42,
+  "bootstrap_resamples": 2000
+}
